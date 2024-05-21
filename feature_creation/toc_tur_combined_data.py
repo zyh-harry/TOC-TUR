@@ -43,7 +43,7 @@ discharge_combined_df = read_and_merge_csv(discharge_files)
 toc_merged_df = pd.merge(toc_combined_df, discharge_combined_df, on="timestamp_ccentral", how="left")
 tur_merged_df = pd.merge(tur_combined_df, discharge_combined_df, on="timestamp_ccentral", how="left")
 
-# Save the results
+#Save the combined csv files
 toc_merged_df.to_csv('toc_combined_with_discharge.csv', index=False)
 tur_merged_df.to_csv('tur_combined_with_discharge.csv', index=False)
 
