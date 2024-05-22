@@ -18,7 +18,10 @@ def perform_eda(df):
     
     #Any null values
     missing_values = df.isnull().sum().to_frame(name='missing_values')
-    missing_values['missing_percentage'] = (missing_values['missing_values'] / len(df)) * 100
+
+    #Calculates the % of missing values for each column, len(df) is the number of rows of the dataframe
+    missing_values['missing_percentage'] = (missing_values['missing_values'] / len(df)) * 100  
+    
     eda_results['missing_values'] = missing_values
     
     #Data correlation (matrix)
