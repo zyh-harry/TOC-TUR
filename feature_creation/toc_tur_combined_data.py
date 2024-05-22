@@ -1,6 +1,6 @@
 import pandas as pd
 
-#All the toc and tur files here
+#All the toc and tur files
 toc_files = [
     'toc_pnwa_concentration_features.csv',
     'toc_pnwa_load_features.csv',
@@ -19,8 +19,6 @@ discharge_files = [
     'discharge_pnwa_features.csv',
     'discharge_wmth_features.csv'
 ]
-
-#output_directory = "/mnt/data/"  # Update this to the desired output directory
 
 #Read and combine CSV files, grouping by 'timestamp_ccentral', df short for dataframe
 def read_and_merge_csv(files):
