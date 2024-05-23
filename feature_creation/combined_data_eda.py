@@ -51,9 +51,13 @@ def combine_eda_results(eda_results):
     blank_df1 = create_blank_df(len(eda_results['summary_statistics']))
     blank_df2 = create_blank_df(len(eda_results['missing_values']))
     
-    combined_df = pd.concat([eda_results['summary_statistics'], blank_df1, 
-    eda_results['missing_values'], blank_df2, 
-    eda_results['correlation_matrix']], axis=1)
+    summary_statistics = eda_results['summary_statistics'].reset_index()
+    missing_values = eda_results['missing_values'].reset_index()
+    correlation_matrix = eda_results['correlation_matrix'].reset_index()
+
+    combined_df = pd.concat([summary_statistics, blank_df1, 
+    missing_values, blank_df2, 
+    correlation_matrix], axis=1)
     return combined_df
 
 toc_eda_combined = combine_eda_results(toc_eda)
